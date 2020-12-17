@@ -53,7 +53,7 @@ public class Roulette : MonoBehaviour
     }
 
     int GetNum(){
-        int index = Random.Range(1,data.NumberUse + 1);
+        int index = Random.Range(0,remaining.Count);
         int num = remaining[index];
         remaining.RemoveAt(index);
 

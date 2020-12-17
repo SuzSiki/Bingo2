@@ -33,7 +33,7 @@ public class BingoCard : MonoBehaviour
         Data = data;
         Center.Set((Data.SheetSize.x - 1) / 2, (Data.SheetSize.y - 1) / 2);
 
-        instance = null;
+        instance = this;
 
         if (Data.SheetSize.x * Data.SheetSize.y > Data.NumberUse)
         {

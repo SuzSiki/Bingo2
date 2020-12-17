@@ -5,7 +5,6 @@ using UnityEngine;
 public class RoulletteRouter : MonoBehaviour
 {
     static public RoulletteRouter instance = null;
-    ExitGames.Client.Photon.Hashtable roomHash;
     public bool Pulse = false;
     BingoCard card = null;
     int _NowNum = 0;
@@ -36,6 +35,10 @@ public class RoulletteRouter : MonoBehaviour
         }
     }
 
+    public void DebugChangeNownum(int num){
+        NowNum = num;
+    }
+
     void Awake()
     {
         instance = this;
@@ -48,7 +51,6 @@ public class RoulletteRouter : MonoBehaviour
         {
             card = BingoCard.instance;
         }
-        NowNum = (int)roomHash["NextNum"];
     }
 
     IEnumerator TriggerListener()
